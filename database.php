@@ -6,7 +6,7 @@ class Database {
     public static function connectPostgres() {
         try {
             // Render proporciona una variable llamada DATABASE_URL
-            $dbUrl = getenv('DATABASE_URL');
+            $dbUrl = getenv('postgresql://colegio_ofym_user:66iDZZNsDsfVKMLVRBJRBxoD9Devr4fu@dpg-d8f35o6rnols73alpu10-a.oregon-postgres.render.com/colegio_ofym');
             
             if ($dbUrl) {
                 // Parsear la URL de Render para extraer credenciales
@@ -42,7 +42,7 @@ class Database {
             $mongoUri = getenv('MONGO_URI');
             if (!$mongoUri) {
                 // URI local de prueba
-                $mongoUri = "mongodb://localhost:27017";
+                $mongoUri = "mongodb+srv://kevin:sena2016@cluster0.oowbmus.mongodb.net/?appName=Cluster0";
             }
             
             $client = new MongoDB\Client($mongoUri);
